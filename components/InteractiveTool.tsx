@@ -76,7 +76,6 @@ export const InteractiveTool: React.FC<ToolProps> = ({ actionType, title }) => {
 
   return (
     <div className="border border-defisim-border rounded-xl p-0 overflow-hidden bg-defisim-card/50">
-        {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-defisim-border bg-[#0a0a0a]">
             <div className="flex items-center gap-2">
                 <Terminal className="w-4 h-4 text-defisim-accent" />
@@ -104,12 +103,11 @@ export const InteractiveTool: React.FC<ToolProps> = ({ actionType, title }) => {
             </div>
         </div>
         
-        {/* Output Log - Part of the simulator tool */}
         {result && (
             <div className="border-t border-defisim-border p-4 bg-black font-mono text-xs">
                 <div className={`mb-1 ${result.success ? 'text-defisim-accent' : 'text-red-500'}`}>
-                    {/* التعديل هنا لضمان قبول العلامة كـ نص */}
-                    {"> "} {result.message}
+                    {/* التعديل الجوهري هنا لمنع خطأ الـ Build */}
+                    {"\u003E"} {result.message}
                 </div>
                 {result.data && (
                     <pre className="text-defisim-muted overflow-x-auto">
