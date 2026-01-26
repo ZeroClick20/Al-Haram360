@@ -97,26 +97,3 @@ export const InteractiveTool: React.FC<ToolProps> = ({ actionType, title }) => {
                 >
                     {loading ? (
                         <Loader2 className="w-5 h-5 text-defisim-accent animate-spin" />
-                    ) : (
-                        <Play className="w-5 h-5 text-defisim-muted group-hover:text-defisim-accent fill-current" />
-                    )}
-                </button>
-            </div>
-        </div>
-        
-        {/* Output Log - Part of the simulator tool */}
-        {result && (
-            <div className="border-t border-defisim-border p-4 bg-black font-mono text-xs">
-                <div className={`mb-1 ${result.success ? 'text-defisim-accent' : 'text-red-500'}`}>
-                    > {result.message}
-                </div>
-                {result.data && (
-                    <pre className="text-defisim-muted overflow-x-auto">
-                        {JSON.stringify(result.data, null, 2)}
-                    </pre>
-                )}
-            </div>
-        )}
-    </div>
-  );
-};
