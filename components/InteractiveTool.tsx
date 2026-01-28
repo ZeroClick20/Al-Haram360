@@ -107,8 +107,7 @@ export const InteractiveTool: React.FC<ToolProps> = ({ actionType, title }) => {
             <div className="border-t border-defisim-border p-4 bg-black font-mono text-xs">
                 <div className={`mb-1 ${result.success ? 'text-defisim-accent' : 'text-red-500'}`}>
                     {/* التعديل الجوهري هنا لمنع خطأ الـ Build */}
-                 {" > "} {result.message}
-                </div>
+                {" > "} {result.message}
                 {result.data && (
                     <pre className="text-defisim-muted overflow-x-auto">
                         {JSON.stringify(result.data, null, 2)}
